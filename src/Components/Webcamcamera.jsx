@@ -79,29 +79,28 @@ function Webcamcamera() {
     return (
         <>
         <div className="webcam-container">
-            <div className="myapp container">
+            <div className="myapp">
                 <div className="row">
-                    <div className="col-4">
-                        <img src="https://www.zealinteractive.in/wp-content/uploads/2019/10/logo.png" alt="" />
-                    </div>
-                    <div className="col-4 d-flex justify-content-center">
-                        <button className='btn btn-success'>Login</button>
-                    </div>
-                    <div className="col-4 d-flex justify-content-end">
-                        <img src="https://www.zealinteractive.in/wp-content/uploads/2019/10/logo.png" alt="" />
-                    </div>
+                   <div className="col">
+                    <img src="https://img.freepik.com/free-vector/abstract-logo-gradient-color-style_23-2147507866.jpg?size=626&ext=jpg&ga=GA1.1.1318947987.1710155342&semt=ais_hybrid" alt="" />
+                   </div>
+                   <div className="col text-center fs-3">Company Name</div>
+                   <div className="col m-auto last">
+                   <img src="https://img.freepik.com/free-vector/abstract-logo-gradient-color-style_23-2147507866.jpg?size=626&ext=jpg&ga=GA1.1.1318947987.1710155342&semt=ais_hybrid" alt="" />
+                   </div>
                 </div>
-
+                
+                <div className="abc">
+                    
                 {!IsModalVisible && (
                     <div className="appvide">
                         {!showWebcam ? (
                             <div className="face-border">
                                 <span className='fs-5'>We would like your permission to take your photo for Registration. Do you consent to this?</span><br></br>
                                 <div className='d-flex justify-content-around mt-3'>
-                                <button onClick={() => handleConsent(true)} className="btn btn-success">Ok</button>
-                                <button onClick={() => handleConsent(false)} className="btn btn-danger">Cancel</button>
+                                <button onClick={() => handleConsent(true)} className="consentbtn">Ok</button>
+                                <button onClick={() => handleConsent(false)} className="consentbtn">Cancel</button>
                                 </div>
-                               
                             </div>
                         ) : (
                             <>
@@ -119,7 +118,7 @@ function Webcamcamera() {
                                     </>
                                 )}
                                 <div className="capturebtn mt-2 mx-auto">
-                                    <button onClick={handleCaptureClick} className='btn btn-success' disabled={isLoading}>
+                                    <button onClick={handleCaptureClick} className='capture-button' disabled={isLoading}>
                                         {isLoading ? (
                                             <div>
                                                 <span></span>Capturing...
@@ -146,9 +145,12 @@ function Webcamcamera() {
                         <button onClick={() => setRecapture(false)}>Recapture</button>
                     </div>
                 )}
+                
+                </div>
+
+
             </div>
         </div>
-
         </>
     );
 }
